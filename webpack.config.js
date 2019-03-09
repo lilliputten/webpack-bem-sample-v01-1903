@@ -1,6 +1,7 @@
 /* global __dirname */
 
 /*{{{ Requirements... */
+
 const path = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -10,6 +11,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ExtractCssPlugin = require('mini-css-extract-plugin');
 // const AsyncChunkNames = require('webpack-async-chunk-names-plugin');
 const ip = require('ip');
+
 /*}}}*/
 
 /*{{{ Paths... */
@@ -134,6 +136,11 @@ module.exports = (env, argv) => {
           retainLines: true,
           cacheDirectory: true,
         },
+      },/*}}}*/
+      /*{{{ bemhtml */{
+        test: /\.(bemhtml)?$/,
+        exclude: /node_modules/,
+        loader: path.resolve('./src/lib/Bem/BEMHTML/bemhtml-loader'),
       },/*}}}*/
       /*{{{ css/postcss */{
         test: /\.(pcss|css)$/,
