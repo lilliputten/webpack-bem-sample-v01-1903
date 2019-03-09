@@ -25,6 +25,7 @@
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-preset-stage-2": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
+    "bem-xjst": "^8.9.3",
     "bootstrap": "^3.3.7",
     "clean-webpack-plugin": "^1.0.1",
     "copy-webpack-plugin": "^4.5.3",

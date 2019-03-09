@@ -1,0 +1,11 @@
+--- BEMHTML.js.orig	2018-11-06 05:41:48.531953400 +0300
++++ BEMHTML.js	2018-11-06 05:45:34.831048900 +0300
+@@ -2300,7 +2326,7 @@
+ });;
+ return module.exports || exports.BEMHTML;
+ }({}, {});
+-var api = new BEMHTML({"to":"BEMHTML.js"});
++var api = new BEMHTML({ elemJsInstances:true, exportName:'BEMHTML', to:'BEMHTML.js' });
+ api.compile(function(match, block, elem, mod, elemMod, oninit, xjstOptions, wrap, replace, extend, mode, def, content, appendContent, prependContent, attrs, addAttrs, js, addJs, mix, addMix, mods, addMods, addElemMods, elemMods, tag, cls, bem, local, applyCtx, applyNext, apply) {
+ /* BEM-XJST User code here: */
+ 

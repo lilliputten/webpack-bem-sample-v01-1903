@@ -12,7 +12,7 @@ const $ = window.jQuery = window.$ = require('jquery');
 // Legacy styles...
 import 'bootstrap/dist/css/bootstrap.css';
 
-import { BEMHTML } from 'lib/BEMHTML';
+import { BEMHTML } from 'lib/Bem/BEMHTML';
 
 // Main styles...
 import './main.pcss';
@@ -28,9 +28,20 @@ function testCreateBemhtmlBlock() {
     );
   });
 
+  BEMHTML.compile(function(match, block, elem, mod, elemMod, oninit, xjstOptions, wrap, replace, extend, mode, def, content, appendContent, prependContent, attrs, addAttrs, js, addJs, mix, addMix, mods, addMods, addElemMods, elemMods, tag, cls, bem, local, applyCtx, applyNext, apply) {
+    block('Test2')(
+      addJs()(true),
+      content()('Block Test2'),
+      tag()('div')
+    );
+  });
+
   const blockHtml = BEMHTML.apply({
     block: 'Test',
-    content: 'Test block',
+    content: {
+      // 'Test block',
+      block: 'Test2',
+    },
   });
   const domElem = $(blockHtml);
 

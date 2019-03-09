@@ -1,0 +1,1 @@
+Generated at 2019.03.09 23:23:45 from bem-xjst v.8.9.3 via '!generate.sh'
