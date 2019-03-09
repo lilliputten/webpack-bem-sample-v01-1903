@@ -2323,7 +2323,7 @@ if (typeof modules === "object") {
 
 
 
-modules.define("BEMHTML",[],function(provide) { var engine = buildBemXjst({});provide(engine);});
+modules.define("BEMHTML",[],function(provide) { var engine = glob.BEMHTML = buildBemXjst({});provide(engine);});
 } else {
 var _libs = {};
 
