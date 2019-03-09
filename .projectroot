@@ -1,0 +1,34 @@
+<!--
+ vim: ft=markdown:
+-->
+
+# terminal
+
+## Project docs
+
+- `README.md`
+- `TODO.md`
+- `CHANGELOG.md`
+
+## Config files
+
+- `package.json`
+- `webpack.config.js`
+- `babel.config.js`
+- `.lvimrc`
+- `.editorconfig`
+- ~~`gulpfile.js`~~
+- ~~`jest.config.js`~~
+- `.eslintrc.yml`
+- `.eslintignore`
+- '.stylelintrc.yml'
+
+# Core source files
+
+- `html/index.html`
+- `src/main.js`
+
+## Source extensions
+
+- `*.js,*.css,*.pcss,*.md,*.json,*.yml,*.yaml,*.sh`
+

@@ -1,0 +1,62 @@
+# https://eslint.org/docs/rules/
+# https://eslint.org/docs/user-guide/configuring#specifying-environments
+env:
+  browser: true
+  commonjs: true
+  es6: true
+  node: true
+  jquery: true
+extends:
+  - 'eslint:recommended'
+  # - 'plugin:react/recommended' # https://github.com/yannickcr/eslint-plugin-react#configuration
+plugins:
+  - 'babel'
+# settings:
+#   react:
+#     version: 'detect'
+parser: 'babel-eslint'
+parserOptions:
+  # ecmaVersion: 2018
+  # ecmaVersion: 7
+  # ecmaVersion: 5
+  sourceType: module
+  # files:
+  #   -
+  #     patterns: '**/*.jsx'
+rules:
+  no-debugger: warn
+  no-console: 0 # DEBUG?
+  no-unused-vars: 0 # DEBUG?
+  # no-unused-vars:
+  #   - warn
+  #   -
+  #     vars: local
+  #     varsIgnorePattern: ^_
+  # camelcase:
+  #   - warn
+  # indent:
+  #   - warn
+  #   - 2
+  linebreak-style:
+    - error
+    - unix
+  # quotes:
+  #   - warn
+  #   - single
+  curly: # single line statements without curly braces
+    - warn
+    # - always
+  # curly: 0
+  semi: # end-linbe semicolons
+    - warn
+    - always
+  # semi: 0
+globals:
+  # System: true # Webpack dynamic import
+  # TODO 2019.02.27, 21:24 -- Remove global variables. Use modules.
+  xerox: true
+  env: true
+  cons: true
+  HP_environment: true
+  ResponseHandler: true
+  # logger: true
