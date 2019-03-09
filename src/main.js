@@ -10,18 +10,50 @@
 const $ = window.jQuery = window.$ = require('jquery');
 
 // Legacy styles...
-import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
-import test from './lib/test';
-import BEMHTML from './lib/BEMHTML';
+import { BEMHTML } from 'lib/BEMHTML';
 
 // Main styles...
 import './main.pcss';
 
-/*{{{ Main entry point (jQuery) */
-$(function() {
+/** testCreateBemhtmlBlock ** {{{
+ */
+function testCreateBemhtmlBlock() {
 
-  console.log('Ok loaded!', BEMHTML);
-  debugger;
+  BEMHTML.compile(function(match, block, elem, mod, elemMod, oninit, xjstOptions, wrap, replace, extend, mode, def, content, appendContent, prependContent, attrs, addAttrs, js, addJs, mix, addMix, mods, addMods, addElemMods, elemMods, tag, cls, bem, local, applyCtx, applyNext, apply) {
+    block('Test')(
+      addJs()(true),
+      tag()('div')
+    );
+  });
 
-});/*}}}*/
+  const blockHtml = BEMHTML.apply({
+    block: 'Test',
+    content: 'Test block',
+  });
+  const domElem = $(blockHtml);
+
+  // Container
+  const appWrapperDom = $('.AppWrapper');
+
+  // Append DOM
+  appWrapperDom.append(domElem);
+
+  // Remove DOM
+  // domElem.remove();
+
+}/*}}}*/
+
+/* Main entry point (jQuery) */
+$(() => {
+  /*DEBUG Let time to load css styles... */ setTimeout(() => {
+
+    // const b = BEMHTML;
+    console.log('Ok loaded!', BEMHTML && BEMHTML.compile);
+    debugger;
+
+    testCreateBemhtmlBlock();
+
+  /*DEBUG*/ }, 100);
+});
