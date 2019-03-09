@@ -14,6 +14,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import { BEMHTML } from 'lib/Bem/BEMHTML';
 
+import Demo from 'blocks/Demo';
+
 // Main styles...
 import './main.pcss';
 
@@ -56,15 +58,55 @@ function testCreateBemhtmlBlock() {
 
 }/*}}}*/
 
+/** testDemoBlock ** {{{
+ */
+function testDemoBlock() {
+
+  BEMHTML.compile(function(match, block, elem, mod, elemMod, oninit, xjstOptions, wrap, replace, extend, mode, def, content, appendContent, prependContent, attrs, addAttrs, js, addJs, mix, addMix, mods, addMods, addElemMods, elemMods, tag, cls, bem, local, applyCtx, applyNext, apply) {
+    block('Test2')(
+      addJs()(true),
+      content()('Block Test2'),
+      tag()('span')
+    );
+  });
+
+  console.log(Demo);
+  const demo = new Demo();
+  demo.init();
+  debugger;
+
+  const blockHtml = BEMHTML.apply({
+    block: 'Demo',
+    content: {
+      // 'Test block',
+      block: 'Test2',
+    },
+  });
+  const domElem = $(blockHtml);
+  debugger;
+
+  // Container
+  const appWrapperDom = $('.AppWrapper');
+
+  // Append DOM
+  appWrapperDom.append(domElem);
+
+  // Remove DOM
+  // domElem.remove();
+
+
+}/*}}}*/
+
 /* Main entry point (jQuery) */
 $(() => {
   /*DEBUG Let time to load css styles... */ setTimeout(() => {
 
     // const b = BEMHTML;
-    console.log('Ok loaded!', BEMHTML && BEMHTML.compile);
-    debugger;
+    // console.log('Ok loaded!', BEMHTML && BEMHTML.compile);
+    // debugger;
 
-    testCreateBemhtmlBlock();
+    // testCreateBemhtmlBlock();
+    testDemoBlock();
 
   /*DEBUG*/ }, 100);
 });
