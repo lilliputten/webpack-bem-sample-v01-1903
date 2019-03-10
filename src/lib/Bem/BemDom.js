@@ -23,7 +23,7 @@
  *
  */
 
-const $ = window.$ || require('jquery');
+const $ = (window && window.$) || require('jquery');
 
 // TODO 2019.03.10, 23:25 -- Get delims from bemrc
 const modDelim = '_';
