@@ -20,23 +20,17 @@ class Demo extends BemBlock {
   static blockName = blockName;
 
   constructor() {
-    console.log(Demo.blockName);
+    console.log(blockName, 'constructor');
     // debugger;
     super();
   }
 
   init() {
-    // console.log(this.blockName);
+    console.log(blockName, 'init');
     // debugger;
     super.init();
   }
 
 }
 
-// console.log(BemDom, BemBlock);
-// console.log(Demo && Demo.blockName);
-// debugger;
-
-BemDom.registerBlock(Demo);
-
-export default Demo;
+export default BemDom.declBlock(Demo);

@@ -8,13 +8,20 @@
 
 class BemBlock {
 
-  constructor() {
+  params = {};
+
+  // TODO 2019.03.10, 23:46 -- To pass argments (params etc) from inherited object constructors
+  constructor({ params }) {
+    Object.assign(this.params, params);
   }
 
   init() {
     // console.log(this.block);
     // debugger;
   }
+
+  // TODO: destroy
+
 }
 
 export default BemBlock;
