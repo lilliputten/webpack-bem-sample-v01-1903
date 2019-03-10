@@ -1,5 +1,5 @@
 /**
- * @class Demo
+ * @class App
  * @description Experimental demo block
  * @author lilliputten <lilliputten@yandex.ru>
  * @description Main entry point
@@ -10,17 +10,17 @@
 import BemBlock from 'lib/Bem/BemBlock';
 import BemDom from 'lib/Bem/BemDom';
 
-import './Demo.bemhtml';
-import './Demo.pcss';
+import './App.bemhtml';
+import './App.pcss';
 
-const blockName = 'Demo';
+const blockName = 'App';
 
-class Demo extends BemBlock {
+class App extends BemBlock {
 
   static blockName = blockName;
 
   constructor() {
-    console.log(Demo.blockName);
+    console.log(App.blockName);
     // debugger;
     super();
   }
@@ -34,9 +34,9 @@ class Demo extends BemBlock {
 }
 
 // console.log(BemDom, BemBlock);
-// console.log(Demo && Demo.blockName);
+// console.log(App && App.blockName);
 // debugger;
 
-BemDom.registerBlock(Demo);
+BemDom.registerBlock(App);
 
-export default Demo;
+export default App;

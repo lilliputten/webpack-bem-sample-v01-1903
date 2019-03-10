@@ -200,7 +200,8 @@ function changeObjectPrototype(srcObject, tgtProto) {
 const block2A = new Block2A();
 const block3A = new Block3A();
 
-block2A.xxx = 1; // Check to save value
+// Set own property, check to save value
+block2A.xxx = 1;
 
 const protoNames2A1 = Object.getPrototypeNames(block2A);
 const protoNames3A1 = Object.getPrototypeNames(block3A);
@@ -215,6 +216,7 @@ console.log('\n',
 '\n');
 debugger;
 
+// Change classes prototypes...
 changeObjectPrototype(block2A, Block3A);
 changeObjectPrototype(block3A, Block1B);
 
@@ -224,6 +226,7 @@ console.log('\n',
   'after changeObjectPrototype', '\n',
   'protoNames2A2:', protoNames2A2.join(', '), '\n',
   'protoNames3A2:', protoNames3A2.join(', '), '\n',
+  'block2A.xxx:', block2A.xxx, '\n',
 '\n');
 console.log('\n',
   'block2A:method1:', block2A.method1 && block2A.method1(), '\n',

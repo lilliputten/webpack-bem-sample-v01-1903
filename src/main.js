@@ -13,7 +13,9 @@ const $ = window.jQuery = window.$ = require('jquery');
 import 'bootstrap/dist/css/bootstrap.css';
 
 import { BEMHTML } from 'lib/Bem/BEMHTML';
+import BemDom from 'lib/Bem/BemDom';
 
+import App from 'blocks/App';
 import Demo from 'blocks/Demo';
 
 // Main styles...
@@ -97,6 +99,15 @@ function testDemoBlock() {
 
 }/*}}}*/
 
+/** testHydrate ** {{{
+ */
+function testHydrate() {
+
+  // const body = $('body');
+  BemDom.hydrate(/* body */);
+
+}/*}}}*/
+
 /* Main entry point (jQuery) */
 $(() => {
   /*DEBUG Let time to load css styles... */ setTimeout(() => {
@@ -106,7 +117,8 @@ $(() => {
     // debugger;
 
     // testCreateBemhtmlBlock();
-    testDemoBlock();
+    // testDemoBlock();
+    testHydrate();
 
   /*DEBUG*/ }, 100);
 });
