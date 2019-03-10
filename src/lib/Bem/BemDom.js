@@ -4,6 +4,7 @@
  * @description Main entry point
  * @since 2019.03.09, 22:54
  * @version 2019.03.09, 22:55
+<<<<<<< HEAD
  *
  * TODO:
  *
@@ -21,6 +22,25 @@
  *   - findChildElem
  *   - findChildElems
  *
+||||||| merged common ancestors
+=======
+ *
+ * TODO:
+ *   - declMod (?)
+ *   - setMod
+ *   - delMod
+ *   - declElem -- ???
+ *   - findChildBlock
+ *   - findChildBlocks
+ *   - findParentBlock
+ *   - find*
+ *
+ *  Later:
+ *
+ *   - findChildElem
+ *   - findChildElem
+ *
+>>>>>>> f780b2545a12becc4fb128501f2af12deb2a4731
  */
 
 const $ = window.$ || require('jquery');
