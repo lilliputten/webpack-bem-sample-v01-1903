@@ -19,24 +19,18 @@ class App extends BemBlock {
 
   static blockName = blockName;
 
-  constructor() {
-    console.log(App.blockName);
-    // debugger;
-    super();
+  constructor(...args) {
+    super(...args);
   }
 
   init() {
-    // console.log(this.blockName);
+    console.log(blockName, 'init');
     // debugger;
     super.init();
   }
 
+  // TODO: destroy
+
 }
 
-// console.log(BemDom, BemBlock);
-// console.log(App && App.blockName);
-// debugger;
-
-BemDom.registerBlock(App);
-
-export default App;
+export default BemDom.declBlock(App);
