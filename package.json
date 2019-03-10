@@ -10,6 +10,7 @@
     "url": "git+https://..."
   },
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "jquery": "^3.3.1"
   },
   "devDependencies": {
@@ -20,6 +21,7 @@
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.3.1",
     "autoprefixer": "^9.4.9",
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "babel-plugin-directory-resolver": "^1.1.0",
@@ -27,7 +29,6 @@
     "babel-preset-stage-2": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "bem-xjst": "^8.9.3",
-    "bootstrap": "^3.3.7",
     "clean-webpack-plugin": "^1.0.1",
     "copy-webpack-plugin": "^4.5.3",
     "css-loader": "^2.1.0",
