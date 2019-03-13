@@ -22,6 +22,8 @@ const buildPath = path.resolve(__dirname, 'build');
 // const fakePath = path.resolve(__dirname, 'fake'); // Debug-time data stubs
 // const imgPath = path.resolve(__dirname, 'img');
 
+const nanoBemhtmlLoaderPath = './src/lib/nano-bem/BEMHTML/nano-bemhtml-loader';
+
 /*}}}*/
 
 module.exports = (env, argv) => {
@@ -140,7 +142,7 @@ module.exports = (env, argv) => {
       /*{{{ bemhtml */{
         test: /\.(bemhtml)?$/,
         exclude: /node_modules/,
-        loader: path.resolve('./src/lib/Bem/BEMHTML/bemhtml-loader'),
+        loader: path.resolve(nanoBemhtmlLoaderPath),
       },/*}}}*/
       /*{{{ css/postcss */{
         test: /\.(pcss|css)$/,

@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * bemhtml loader
+ * nano-bemhtml loader
  *
  * @param  {string} source
  * @return {string}

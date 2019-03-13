@@ -7,8 +7,8 @@
  * @version 2019.03.10, 21:23
  */
 
-import BemBlock from 'lib/Bem/BemBlock';
-import BemDom from 'lib/Bem/BemDom';
+import BemBlock from 'nano-bem/BemBlock';
+import BemDom from 'nano-bem/BemDom';
 
 import './Demo.bemhtml';
 import './Demo.pcss';

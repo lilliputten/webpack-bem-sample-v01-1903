@@ -10,6 +10,7 @@ module.exports = {
       root: [ './src' ],
       alias: {
         lib: [ './src/lib' ],
+        'nano-bem': [ './src/lib/nano-bem' ],
         blocks: [ './src/blocks' ],
       },
     }],

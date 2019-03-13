@@ -12,8 +12,8 @@ const $ = window.jQuery = window.$ = require('jquery');
 // Legacy styles...
 import 'bootstrap/dist/css/bootstrap.css';
 
-import { BEMHTML } from 'lib/Bem/BEMHTML';
-import BemDom from 'lib/Bem/BemDom';
+import { BEMHTML } from 'nano-bem/BEMHTML';
+import BemDom from 'nano-bem/BemDom';
 
 import App from 'blocks/App';
 import Demo from 'blocks/Demo';
