@@ -5,34 +5,25 @@
  * @since 2019.03.09, 22:54
  * @version 2019.03.09, 22:55
  *
- * TODO:
- *
- *   - declMod (?)
- *   - setMod
- *   - delMod
- *   - declElem -- ???
- *   - findChildBlock
- *   - findChildBlocks
- *   - findParentBlock
- *   - find*
- *
- *  Later:
- *
- *   - findChildElem
- *   - findChildElems
- *
  */
 
 const $ = (window && window.$) || require('jquery');
 
-// TODO 2019.03.10, 23:25 -- Get delims from bemrc
-const modDelim = '_';
-const elemDelim = '__';
+// import events from 'event-lite';
+// // TODO 2019.03.13, 22:12 -- Block/elem event manager
+// // - http://kawanet.github.io/event-lite/EventLite.html
+// // - https://www.npmjs.com/package/event-lite
+
+// TODO 2019.03.10, 23:25 -- Get delims from `.bemrc` (pass thru webpack)?
+// TODO 2019.03.13, 22:13 -- Pass delims to `BEMHTML`?
+const modDelim = '_'; // bemInternal.MOD_DELIM
+const elemDelim = '__'; // bemInternal.ELEM_DELIM
 
 class BemDomFabric {
 
   // Entities registry
-  entitiesRegistry = {};
+  entities = {};
+  // initFns = []; // ???
 
   // TODO 2019.03.10, 23:26 -- Need to separate registries for blocks, elems, mods?
   // blocksRegistry = {};
@@ -52,28 +43,29 @@ class BemDomFabric {
    * @return {object} blockClass
    */
   declBlock(blockClass) {
+    debugger;
     const blockName = blockClass.blockName;
-    if (this.entitiesRegistry[blockName]) {
+    if (this.entities[blockName]) {
       throw new Error('Block already defined: ' + blockName);
     }
-    this.entitiesRegistry[blockName] = blockClass;
+    this.entities[blockName] = blockClass;
     return blockClass;
   }/*}}}*/
 
   // Hydrate methods...
 
-  /** hydrateDomElemEntity ** {{{ Hydrate one entity (class) on the specified dom element
+  /** hydrateDomEntity ** {{{ Hydrate one entity (class) on the specified dom element
    * @param {jQuery} domElem
    * @param {string} entityName
    * @return {object|undefined} entityInstance
    */
-  hydrateDomElemEntity(domElem, entityName) {
+  hydrateDomEntity(domElem, entityName) {
 
     // data-bem attribute
     const bemData = domElem.data('bem');
 
     // Do we have a class description?
-    const EntityClass = this.entitiesRegistry[entityName];
+    const EntityClass = this.entities[entityName];
 
     // If found EntityClass class...
     if (EntityClass) {
@@ -95,6 +87,8 @@ class BemDomFabric {
    */
   hydrateDomElem(domElem) {
 
+    debugger;
+
     // Get data-bem property on specified dom
     const bemData = domElem.data('bem');
 
@@ -106,7 +100,7 @@ class BemDomFabric {
 
     // Walk thru all found entities...
     bemEntities.map((entityName) => {
-      const entityInstance = this.hydrateDomElemEntity(domElem, entityName);
+      const entityInstance = this.hydrateDomEntity(domElem, entityName);
       if (entityInstance) {
         entities[entityName] = entityInstance;
       }
